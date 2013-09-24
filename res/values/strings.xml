@@ -1,16 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-    
-	<string name="app_name">Tic-Tac-Toe</string>
-	<string name="first_human">You go first.</string>
-	<string name="first_computer">Android goes first.</string>
-	<string name="turn_human">Your turn.</string>
-	<string name="turn_computer">Android\'s turn.</string>
-	<string name="result_tie">It\'s a tie.</string>
-	<string name="result_human_wins">You won!</string>
-	<string name="result_computer_wins">Android won!</string>
+    <string name="app_name">Tic-Tac-Toe</string>
+    <string name="first_human">You go first.</string>
+    <string name="turn_human">Your turn.</string>
+    <string name="turn_computer">Android\'s turn.</string>
+    <string name="result_tie">It\'s a tie.</string>
+    <string name="result_human_wins">You won!</string>
+    <string name="result_computer_wins">Android won!</string>
+    <string name="score_label_human">Human</string>
+    <string name="score_label_tie">Ties</string>
+    <string name="score_label_computer">Android</string>
+    <string name="infoforTut">This is the starter code for turoial 3</string>
+    <string name="first_computer">Android Goes First</string>
+    <string name="new_game">Start New Game Now</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_android_tic_tac_toe">Tic-Tac-Toe</string>
+    <string name="info_Label">Who\'s Turn is It?</string>
+    <string name="zero">0</string>
+    <string name="difficulty_choose">Difficulty level?</string>
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_harder">Harder</string>
+    <string name="difficulty_expert">Expert</string>
+    <string name="quit_question">Quit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="about_text">Tic-Tac-Toe, pick a difficulty!</string>
 
 </resources>
