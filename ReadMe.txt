@@ -18,4 +18,5 @@ Featured in this project is:
 
 Things to add next:
 -cosmetic improvements (such as the action bar icons)
+-Find a way to remove the app title from the action bar, so I can place more action bar icons
 -Find ways to make more use of a smartphone's features
