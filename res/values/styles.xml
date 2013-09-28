@@ -1,9 +1,5 @@
 <resources>
 
     <style name="AppTheme" parent="android:Theme.Light" />
-    <style name="ActionBar.CustomTheme" parent="@android:style/Widget.Holo.ActionBar"/>
-    <style name="CustomTheme" parent="@android:style/Theme.Holo">
-        <item name="android:actionBarStyle">@style/ActionBar.CustomTheme</item>
-    </style>
 
 </resources>

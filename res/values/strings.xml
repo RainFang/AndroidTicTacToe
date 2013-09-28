@@ -5,12 +5,12 @@
     <string name="turn_human">Your turn.</string>
     <string name="turn_computer">Android\'s turn.</string>
     <string name="result_tie">It\'s a tie.</string>
-    <string name="result_human_wins">You won!</string>
-    <string name="result_computer_wins">Android won!</string>
+    <string name="result_human_wins">The humans triumph over the machines!</string>
+    <string name="result_computer_wins">Skynet won! You have failed mankind</string>
     <string name="score_label_human">Human</string>
     <string name="score_label_tie">Ties</string>
     <string name="score_label_computer">Android</string>
-    <string name="infoforTut">This is the starter code for turoial 3</string>
+    <string name="infoforTut">This USED to be the starter code for turoial 3</string>
     <string name="first_computer">Android Goes First</string>
     <string name="new_game">Start New Game Now</string>
     <string name="menu_settings">Settings</string>
