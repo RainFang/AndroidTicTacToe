@@ -8,6 +8,7 @@ package scottmd3.tictactoe;
  * Logic for a tic tac toe game.
  */
 
+import java.util.Arrays;
 import java.util.Random;
 
 import android.util.Log;
@@ -39,6 +40,37 @@ public class TicTacToeGame {
 		// fill the board
 		mBoard = new char[BOARD_SIZE];
 		clearBoard();
+	}
+	
+	/**
+	 * Copies the board state
+	 * @return copy of current board
+	 */
+	public char[] getBoardState() 
+	{
+		return mBoard.clone();
+	}
+	
+	/**d 
+	 * Set the board to the new state. board.length must equal 9. 
+	 * All elements must be HUMAN_PLAYER, COMPUTER_PLAYERS, or
+	 * OPEN_SPOT
+	 */
+	public void setBoardState(char[] board) 
+	{
+		if(board == null || board.length != 9 || badChar(board))
+			throw new IllegalArgumentException("bad board: " + Arrays.toString(board));
+		for(int i = 0; i < board.length; i++)
+			mBoard[i] = board[i];
+	}
+	
+	private boolean badChar(char[] board) {
+		for(char ch : board)
+			if(!(ch == HUMAN_PLAYER
+						|| ch == COMPUTER_PLAYER
+						|| ch == OPEN_SPOT))
+				return true;
+		return false;
 	}
 
 	/** Clear the board of all X's and O's by setting all spots to OPEN_SPOT. */

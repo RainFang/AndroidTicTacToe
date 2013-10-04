@@ -21,9 +21,10 @@ public final class R {
         public static final int icon=0x7f020007;
         public static final int new_game=0x7f020008;
         public static final int quit_game=0x7f020009;
+        public static final int reset_scores=0x7f02000a;
     }
     public static final class id {
-        public static final int about=0x7f08000d;
+        public static final int about=0x7f08000e;
         public static final int ai_difficulty=0x7f08000b;
         public static final int board=0x7f080002;
         public static final int computer_score=0x7f080008;
@@ -33,7 +34,8 @@ public final class R {
         public static final int new_game=0x7f08000a;
         public static final int player_score=0x7f080005;
         public static final int player_score_label=0x7f080004;
-        public static final int quit=0x7f08000c;
+        public static final int quit=0x7f08000d;
+        public static final int reset_scores=0x7f08000c;
         public static final int textView1=0x7f080001;
         public static final int tie_score=0x7f080007;
         public static final int tie_score_label=0x7f080006;
@@ -66,7 +68,9 @@ public final class R {
         public static final int menu_settings=0x7f05000d;
         public static final int new_game=0x7f05000c;
         public static final int no=0x7f050017;
+        public static final int none=0x7f050019;
         public static final int quit_question=0x7f050015;
+        public static final int reset_scores_question=0x7f05001a;
         public static final int result_computer_wins=0x7f050006;
         public static final int result_human_wins=0x7f050005;
         public static final int result_tie=0x7f050004;

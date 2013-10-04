@@ -25,5 +25,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="about_text">Tic-Tac-Toe, pick a difficulty!</string>
+    <string name="none">0</string>
+    <string name="reset_scores_question">You sure you want to reset the scores?</string>
 
 </resources>
