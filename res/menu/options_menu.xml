@@ -6,10 +6,10 @@
         android:showAsAction="always"
         android:title="New Game"/>
     <item
-        android:id="@+id/ai_difficulty"
-        android:icon="@drawable/difficulty_level"
+        android:id="@+id/settings"
+        android:icon="@drawable/settings"
         android:showAsAction="always"
-        android:title="Difficulty"/>
+        android:title="Settings"/>
     <item
         android:id="@+id/reset_scores"
         android:icon="@drawable/reset_scores"

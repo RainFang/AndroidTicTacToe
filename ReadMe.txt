@@ -1,7 +1,7 @@
 Author: Yu-Chieh Fang (Rain)
 Author Email: YCFang87@gmail.com
 
-Last Updated: 10-04-2013
+Last Updated: 10-11-2013
 
 About this project:
 
@@ -24,7 +24,11 @@ Featured in this project is:
 -Quit Game
 -Terminator theme and icons
 -Sound effects
+-New settings button and options (sound toggle, victory message)
+-Stored settings
 
 Things to add next:
+-Aesthetics (icons, colors, etc)
+-An option for determining who goes first
 -Find ways to make more use of a smartphone's features
 -User exits is only saving score. It needs to also save the current board as well. Only orientation changes is keeping the current board saved.

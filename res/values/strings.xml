@@ -27,5 +27,11 @@
     <string name="about_text">Tic-Tac-Toe, pick a difficulty!</string>
     <string name="none">0</string>
     <string name="reset_scores_question">You sure you want to reset the scores?</string>
+    <string name="first_alt">Alternates</string>
+    <string name="first_loser">Loser first</string>
+    <string name="first_loser_tie_alt">Loser first, alternate on ties</string>
+    <string name="first_random">Randomized</string>
+    <string name="first_player">Human first</string>
+    <string name="first_machine">Computer first</string>
 
 </resources>

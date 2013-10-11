@@ -8,6 +8,10 @@
 package scottmd3.tictactoe;
 
 public final class R {
+    public static final class array {
+        public static final int list_difficulty_level=0x7f060000;
+        public static final int list_first=0x7f060001;
+    }
     public static final class attr {
     }
     public static final class drawable {
@@ -22,68 +26,78 @@ public final class R {
         public static final int new_game=0x7f020008;
         public static final int quit_game=0x7f020009;
         public static final int reset_scores=0x7f02000a;
+        public static final int settings=0x7f02000b;
     }
     public static final class id {
-        public static final int about=0x7f08000e;
-        public static final int ai_difficulty=0x7f08000b;
-        public static final int board=0x7f080002;
-        public static final int computer_score=0x7f080008;
-        public static final int computer_score_label=0x7f080009;
-        public static final int imageView1=0x7f080000;
-        public static final int information=0x7f080003;
-        public static final int new_game=0x7f08000a;
-        public static final int player_score=0x7f080005;
-        public static final int player_score_label=0x7f080004;
-        public static final int quit=0x7f08000d;
-        public static final int reset_scores=0x7f08000c;
-        public static final int textView1=0x7f080001;
-        public static final int tie_score=0x7f080007;
-        public static final int tie_score_label=0x7f080006;
+        public static final int about=0x7f0a000e;
+        public static final int board=0x7f0a0002;
+        public static final int computer_score=0x7f0a0008;
+        public static final int computer_score_label=0x7f0a0009;
+        public static final int imageView1=0x7f0a0000;
+        public static final int information=0x7f0a0003;
+        public static final int new_game=0x7f0a000a;
+        public static final int player_score=0x7f0a0005;
+        public static final int player_score_label=0x7f0a0004;
+        public static final int quit=0x7f0a000d;
+        public static final int reset_scores=0x7f0a000c;
+        public static final int settings=0x7f0a000b;
+        public static final int textView1=0x7f0a0001;
+        public static final int tie_score=0x7f0a0007;
+        public static final int tie_score_label=0x7f0a0006;
     }
     public static final class layout {
         public static final int about_dialog=0x7f030000;
         public static final int main=0x7f030001;
     }
     public static final class menu {
-        public static final int options_menu=0x7f070000;
+        public static final int options_menu=0x7f090000;
     }
     public static final class raw {
-        public static final int computer_move=0x7f040000;
-        public static final int computer_win=0x7f040001;
-        public static final int human_move=0x7f040002;
-        public static final int human_win=0x7f040003;
-        public static final int tie=0x7f040004;
+        public static final int computer_move=0x7f050000;
+        public static final int computer_win=0x7f050001;
+        public static final int human_move=0x7f050002;
+        public static final int human_win=0x7f050003;
+        public static final int tie=0x7f050004;
     }
     public static final class string {
-        public static final int about_text=0x7f050018;
-        public static final int app_name=0x7f050000;
-        public static final int difficulty_choose=0x7f050011;
-        public static final int difficulty_easy=0x7f050012;
-        public static final int difficulty_expert=0x7f050014;
-        public static final int difficulty_harder=0x7f050013;
-        public static final int first_computer=0x7f05000b;
-        public static final int first_human=0x7f050001;
-        public static final int info_Label=0x7f05000f;
-        public static final int infoforTut=0x7f05000a;
-        public static final int menu_settings=0x7f05000d;
-        public static final int new_game=0x7f05000c;
-        public static final int no=0x7f050017;
-        public static final int none=0x7f050019;
-        public static final int quit_question=0x7f050015;
-        public static final int reset_scores_question=0x7f05001a;
-        public static final int result_computer_wins=0x7f050006;
-        public static final int result_human_wins=0x7f050005;
-        public static final int result_tie=0x7f050004;
-        public static final int score_label_computer=0x7f050009;
-        public static final int score_label_human=0x7f050007;
-        public static final int score_label_tie=0x7f050008;
-        public static final int title_activity_android_tic_tac_toe=0x7f05000e;
-        public static final int turn_computer=0x7f050003;
-        public static final int turn_human=0x7f050002;
-        public static final int yes=0x7f050016;
-        public static final int zero=0x7f050010;
+        public static final int about_text=0x7f070018;
+        public static final int app_name=0x7f070000;
+        public static final int difficulty_choose=0x7f070011;
+        public static final int difficulty_easy=0x7f070012;
+        public static final int difficulty_expert=0x7f070014;
+        public static final int difficulty_harder=0x7f070013;
+        public static final int first_alt=0x7f07001b;
+        public static final int first_computer=0x7f07000b;
+        public static final int first_human=0x7f070001;
+        public static final int first_loser=0x7f07001c;
+        public static final int first_loser_tie_alt=0x7f07001d;
+        public static final int first_machine=0x7f070020;
+        public static final int first_player=0x7f07001f;
+        public static final int first_random=0x7f07001e;
+        public static final int info_Label=0x7f07000f;
+        public static final int infoforTut=0x7f07000a;
+        public static final int menu_settings=0x7f07000d;
+        public static final int new_game=0x7f07000c;
+        public static final int no=0x7f070017;
+        public static final int none=0x7f070019;
+        public static final int quit_question=0x7f070015;
+        public static final int reset_scores_question=0x7f07001a;
+        public static final int result_computer_wins=0x7f070006;
+        public static final int result_human_wins=0x7f070005;
+        public static final int result_tie=0x7f070004;
+        public static final int score_label_computer=0x7f070009;
+        public static final int score_label_human=0x7f070007;
+        public static final int score_label_tie=0x7f070008;
+        public static final int title_activity_android_tic_tac_toe=0x7f07000e;
+        public static final int turn_computer=0x7f070003;
+        public static final int turn_human=0x7f070002;
+        public static final int yes=0x7f070016;
+        public static final int zero=0x7f070010;
     }
     public static final class style {
-        public static final int AppTheme=0x7f060000;
+        public static final int AppTheme=0x7f080000;
+    }
+    public static final class xml {
+        public static final int preferences=0x7f040000;
     }
 }

@@ -11,6 +11,8 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <!-- Allow the Settings activity to be launched --> 
+		<activity android:name=".Settings" android:label="Settings"></activity>
         <activity
             android:name=".AndroidTicTacToe"
             android:label="@string/app_name" >

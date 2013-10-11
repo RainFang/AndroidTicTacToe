@@ -7,6 +7,7 @@ import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.AudioManager;
@@ -30,7 +31,6 @@ public class AndroidTicTacToe extends Activity {
 
 	private static final String TAG = "AndroidTicTacToe";
 
-	private static final int DIALOG_DIFFICULTY_ID = 0;
 	private static final int DIALOG_QUIT_ID = 1;
 	private static final int DIALOG_ABOUT_ID = 2;
 	private static final int DIALOG_RESET_SCORES = 3;
@@ -72,6 +72,9 @@ public class AndroidTicTacToe extends Activity {
 	private int mComputerWinSoundID;
 	private int mTieSoundID;
 	
+	// SoundPool toggle setting
+	private boolean mSoundOn;
+	
 	private SharedPreferences mPrefs;
 
 
@@ -83,6 +86,8 @@ public class AndroidTicTacToe extends Activity {
 		setContentView(R.layout.main);
 		
 		mPrefs = getSharedPreferences("ttt_prefs", MODE_PRIVATE);
+		mSoundOn = mPrefs.getBoolean("sound", true); // move this to the createSoundPool method 
+		// difficulty being set in startFromScratch or restoreGame
 		
 		setTextViewInfo();
 		readScores();
@@ -272,7 +277,7 @@ public class AndroidTicTacToe extends Activity {
 		else if (mGame.setMove(player, location)) 
 		{ 
 			mBoardView.invalidate(); // Redraw the board
-			mSounds.play(mHumanMoveSoundID, 1, 1, 1, 0, 1);
+			playSound(mHumanMoveSoundID);
 			return true;
 		}
 		return false;
@@ -287,7 +292,7 @@ public class AndroidTicTacToe extends Activity {
 
 				mGame.setMove(TicTacToeGame.COMPUTER_PLAYER, location);
 				// soundID, leftVolume, rightVolume, priority, loop, rate
-				mSounds.play(mComputerMoveSoundID, 1, 1, 1, 0, 1);	
+				playSound(mComputerMoveSoundID);
 				
 				mBoardView.invalidate();   // Redraw the board
 
@@ -303,6 +308,19 @@ public class AndroidTicTacToe extends Activity {
 		};		
 	}
 	
+	private void playSound(int sound)
+	{
+		if (mSoundOn)
+		{
+			Log.d(TAG, "mSoundOn is true and playing sound");
+			mSounds.play(sound, 1, 1, 1, 0, 1);
+		}
+		else
+		{
+			Log.d(TAG, "mSoundOn is false and staying silent");
+		}
+	}
+	
 	// for ending a game
 	private void endGame(int winner) 
 	{
@@ -311,21 +329,26 @@ public class AndroidTicTacToe extends Activity {
 			mTies++;
 			mTieScoreTextView.setText(Integer.toString(mTies));
 			mInfoTextView.setText(R.string.result_tie);
-			mSounds.play(mTieSoundID, 1, 1, 1, 0, 1);
+			
+			playSound(mTieSoundID);
 		}
 		else if (winner == 2) 
 		{
 			mHumanWins++;
 			mHumanScoreTextView.setText(Integer.toString(mHumanWins));
-			mInfoTextView.setText(R.string.result_human_wins);
-			mSounds.play(mHumanWinSoundID, 1, 1, 1, 0, 1);
+			
+			String defaultMessage = getResources().getString(R.string.result_human_wins); 
+			mInfoTextView.setText(mPrefs.getString("victory_message", defaultMessage)); 
+			playSound(mHumanWinSoundID); // new method, to check mSoundOn and play sound
+			//mInfoTextView.setText(R.string.result_human_wins);
 		}
 		else 
 		{
 			mComputerWins++;
 			mComputerScoreTextView.setText(Integer.toString(mComputerWins));
 			mInfoTextView.setText(R.string.result_computer_wins);
-			mSounds.play(mComputerWinSoundID, 1, 1, 1, 0, 1);
+			
+			playSound(mComputerWinSoundID);
 		}
 		mGameOver = true;
 	}
@@ -355,9 +378,9 @@ public class AndroidTicTacToe extends Activity {
 				startNewGame(false);
 				return true;
 				
-			case R.id.ai_difficulty: 
-				showDialog(DIALOG_DIFFICULTY_ID);   	
-				return true;
+			case R.id.settings: 
+				 startActivityForResult(new Intent(this, Settings.class), 0); 
+				 return true; 
 				
 			case R.id.quit:
 				showDialog(DIALOG_QUIT_ID);
@@ -380,9 +403,6 @@ public class AndroidTicTacToe extends Activity {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
 		switch(id) {
-			case DIALOG_DIFFICULTY_ID:
-				dialog = createDifficultyDialog(builder);
-				break;    // this case
 			case DIALOG_QUIT_ID:
 				dialog = this.createQuitDialog(builder);
 				break;
@@ -400,6 +420,32 @@ public class AndroidTicTacToe extends Activity {
 			Log.d(TAG, "Dialog created: " + id + ", dialog: " + dialog);
 		return dialog;   
 	}
+	
+	@Override 
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) 
+	{ 
+	 
+		 if (requestCode == RESULT_CANCELED) 
+		 { 
+			 // Apply potentially new settings 
+			 mSoundOn = mPrefs.getBoolean("sound", true); 
+			 String[] levels = getResources().getStringArray(R.array.list_difficulty_level); 
+			 
+			 // set difficulty, or use hardest if not present, 
+			 String difficultyLevel = mPrefs.getString("difficulty_level", levels[levels.length - 1]); 
+			 int i = 0; 
+			 while(i < levels.length) 
+			 { 
+				 if(difficultyLevel.equals(levels[i])) 
+				 { 
+					 mGame.setDifficultyLevel(TicTacToeGame.DifficultyLevel.values()[i]); 
+					 i = levels.length; // to stop loop 
+				 } 
+				 i++; 
+			 } 
+		 } 
+	} 
+
 	
 	// helper method for creating difficulty dialog
 	private Dialog createDifficultyDialog(AlertDialog.Builder builder) 
